@@ -11,25 +11,17 @@ ob_start();
 
 	<div id=Form-col>
 		
-		<div id=Log-form class="opened">
-			<form action=post>
-				<p>Je suis...</p>
-				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz">
-				<p>Lien de l'invitation</p>
-				<input class=input type="password" name="pwd" placeholder="motdepasse">
-				<input class="submit button" type="submit" value=Valider>
-			</form>
-		</div>
-		
 		<div class="wrapper">
-						<form class="form" method="post" action="http://localhost/IHM/index.php">
-						  <input type="text" class="name field-in font" name="mailnom" placeholder="Je suis..."/>
+						
+						<form class="form" action=post>
+						<h1> Invitation </h1>
+						<input type="text" class="name field-in font" name="nameInvit" placeholder="Je suis..."/>
 						  
-						  <input type="email" class="email field-in font" name="mail"  placeholder="Lien de l'invitation"/>
+						  <input type="text" class="email field-in font" name="linkInvit"  placeholder="Lien de l'invitation"/>
 						  
 						  
 						  
-						  <button class="submit2 font" name="mailsub" value="1" >Envoyer</button>
+						  <button class="submit2 font" name="submitInvit" value=Valider>Envoyer</button>
 						</form>  	
 						<div class="shadow"></div>
 					  </div>
