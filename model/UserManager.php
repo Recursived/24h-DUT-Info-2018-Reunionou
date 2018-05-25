@@ -5,24 +5,26 @@ require_once 'Manager.php';
 class UserManager extends Manager {
 
 	public function setUser($data) {
+		print_r($data);
 		$db = $this->dbConnect();
 		if (empty($data['login']) || empty($data['pwd']) || empty($data['nom'])) {
 			require_once 'view/registerView.php';
 		} else {
-			$sql = 'INSERT INTO personne (nom) VALUES :nom';
+			$sql = 'INSERT INTO personne (nom) VALUES (:nom)';
 			$req = $db->prepare($sql);
 			$req->execute(array(
 				':nom' => $data['nom']
 			));
-			$sql = 'INSERT INTO utilisateur (id_personne, login, pwd)
+			$sql = 'INSERT INTO utilisateur (id_personne, id, login, pwd)
 					VALUES ((SELECT id FROM personne ORDER BY id DESC LIMIT 1),
+							(SELECT id FROM personne ORDER BY id DESC LIMIT 1),
 					:login, :pwd)';
 			$req = $db->prepare($sql);
 			$req->execute(array(
 				':login' => $data['login'],
 				':pwd' => sha1($data['pwd'])
 			));
-			header('Location: index.php');
+			// header('Location: index.php');
 		}
 	}
 
