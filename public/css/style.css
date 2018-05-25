@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Tajawal');
+
+#Container{
+
+}
+
+#Index-head{
+	text-align: center;
+	font-size: 2em;
+	font-family: 'Tajawal', sans-serif;
+}
