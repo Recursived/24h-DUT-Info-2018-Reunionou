@@ -21,11 +21,21 @@ function register() {
 }
 
 function auth($data) {
-	if (!empty($data['login']) || !empty($data['pwd'])) {
+	if (empty($data['login']) || empty($data['pwd'])) {
 		header('Location: index.php');
 	} else {
 		$manager = new UserManager();
 		$manager->connectUser($data['login'], $data['pwd']);
+		header('Location: index.php');
+	}
+}
+
+function setEvent($data) {
+	if (empty($data['titre']) || empty($data['date']) || empty($data['lieu'])) {
+		header('Location: index.php');
+	} else {
+		$manager = new EventManager();
+		$manager->setEvent($data);
 		header('Location: index.php');
 	}
 }
