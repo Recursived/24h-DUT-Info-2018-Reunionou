@@ -12,6 +12,11 @@ kazoo    #AEF3E7
 body{
 	background-color: #8EE3EF;
 }
+
+a{
+	text-decoration: none !important;
+	color:black;
+}
 *{
 	font-family: 'Tajawal', sans-serif;
 	color:white;
@@ -43,6 +48,13 @@ body{
 	border-radius:5px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 	margin-bottom:20px;
+	-o-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+.input:hover{
+	box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.35);
 }
 
 .button{
