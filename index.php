@@ -13,6 +13,8 @@ try {
 			addUser();
 		} elseif ($_GET['action'] == 'auth') {
 			auth($_POST);
+		} elseif ($_GET['action'] == 'addEvent') {
+			setEvent($_POST);
 		} else {
 			index();
 		}
