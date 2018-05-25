@@ -8,9 +8,9 @@ function index() {
 	if (Manager::checkUserLoggedIn($_SESSION)) {
 		$manager = new EventManager();
 		$dataEvents = $manager->getEvents($_SESSION['id']);
-		require_once 'view/indexView.php';
-	} else {
 		require_once 'view/eventsView.php';
+	} else {
+		require_once 'view/indexView.php';
 	}
 }
 
