@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 25 Mai 2018 à 21:04
+-- Généré le :  Ven 25 Mai 2018 à 21:12
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -71,8 +71,7 @@ CREATE TABLE `utilisateur` (
   `id_personne` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `login` varchar(40) NOT NULL,
-  `pwd` varchar(40) NOT NULL,
-  `nom` varchar(40) NOT NULL
+  `pwd` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

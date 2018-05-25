@@ -41,4 +41,3 @@ class Manager {
 		return $alert;
 	}
 }
-}

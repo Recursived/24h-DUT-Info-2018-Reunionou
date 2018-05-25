@@ -8,6 +8,8 @@ try {
 			index();
 		} elseif ($_GET['action'] == 'register') {
 			register();
+		} elseif ($_GET['action'] == 'addUser') {
+			addUser();
 		} else {
 			index();
 		}
