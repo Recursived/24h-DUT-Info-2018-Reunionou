@@ -1,6 +1,7 @@
 <?php
 
 require_once 'model/Manager.php';
+require_once 'model/UserManager.php';
 
 function index() {
 	if (Manager::checkUserLoggedIn($_SESSION)) {
@@ -16,5 +17,15 @@ function register() {
 		require_once 'view/indexView.php';
 	} else {
 		require_once 'view/registerView.php';
+	}
+}
+
+function auth($data) {
+	if (!empty($data['login']) || !empty($data['pwd'])) {
+		header('Location: index.php');
+	} else {
+		$manager = new UserManager();
+		$manager->connectUser($data['login'], $data['pwd']);
+		header('Location: index.php');
 	}
 }
