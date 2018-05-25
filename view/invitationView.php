@@ -5,6 +5,8 @@ $title = 'Index';
 ob_start();
 ?>
 
+<link rel="stylesheet" href="public/css/style2.css">
+
 <div id=Container>
 
 	<div id=Form-col>
