@@ -10,7 +10,7 @@ try {
 		} elseif ($_GET['action'] == 'register') {
 			register();
 		} elseif ($_GET['action'] == 'addUser') {
-			addUser();
+			addUser($_POST);
 		} elseif ($_GET['action'] == 'auth') {
 			auth($_POST);
 		} elseif ($_GET['action'] == 'addEvent') {
