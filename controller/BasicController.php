@@ -10,7 +10,7 @@ function index() {
 		$dataEvents = $manager->getEvents($_SESSION['id']);
 		require_once 'view/indexView.php';
 	} else {
-		require_once 'view/indexView.php';
+		require_once 'view/eventsView.php';
 	}
 }
 
