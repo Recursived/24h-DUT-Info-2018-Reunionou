@@ -15,6 +15,8 @@ try {
 			auth($_POST);
 		} elseif ($_GET['action'] == 'addEvent') {
 			setEvent($_POST);
+		} elseif ($_GET['action'] == 'invit') {
+			invit();
 		} else {
 			index();
 		}
