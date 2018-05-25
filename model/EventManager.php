@@ -30,4 +30,10 @@ class EventManager extends Manager {
 			header('Location: index.php');
 		}
 	}
+
+	public function joinEvent($data) {
+		$db = $this->dbConnect();
+		$sql = 'INSERT INTO participe VALUES (:idUser, :idEvent, :reponse, :comment)';
+		$reqp = $db->prepare($sql);
+	}
 }

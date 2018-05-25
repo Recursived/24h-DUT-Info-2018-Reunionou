@@ -39,3 +39,7 @@ function setEvent($data) {
 		header('Location: index.php');
 	}
 }
+
+function invit() {
+	require_once 'view/invitationView.php';
+}
