@@ -8,7 +8,8 @@ ob_start();
 <div id=Container>
 
 	<div id=Form-col>
-		<div id=Log-form>
+		
+		<div id=Log-form class="opened">
 			<form action=post>
 				<p>Adresse mail</p>
 				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz">
