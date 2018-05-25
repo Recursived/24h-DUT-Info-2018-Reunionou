@@ -3,6 +3,7 @@
 require_once 'controller/BasicController.php';
 
 try {
+	session_start();
 	if (isset($_GET['action'])) {
 		if ($_GET['action'] == 'index') {
 			index();

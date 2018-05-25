@@ -32,4 +32,7 @@ class UserManager extends Manager {
 }
 
 $manager = new UserManager();
-$_POST['']
+$_POST['login'] = "didier";
+$_POST['nom'] = "charles";
+$_POST['pwd'] = "banane";
+$manager->setUser($_POST);
