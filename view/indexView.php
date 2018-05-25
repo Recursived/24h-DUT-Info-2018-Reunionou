@@ -5,6 +5,8 @@ $title = 'Index';
 ob_start();
 ?>
 
+<link rel="stylesheet" href="public\css\style2.css">
+
 <div id=Container>
 	<div id=Index-head>
 		<div id=Logo>
@@ -18,7 +20,7 @@ ob_start();
 			Connection
 		</div>
 		<div id=Log-form>
-			<form action=post>
+			<form action=post action=index.php?action=auth>
 				<p>Adresse mail</p>
 				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz" required>
 				<p>Mot de passe</p>
@@ -31,14 +33,12 @@ ob_start();
 			Inscription
 		</div>
 		<div id=Reg-form>
-			<form action=post>
+			<form action=post action=index.php?action=addUser>
 				<p>Nom d'utilisateur (celui qui sera visible)</p>
-				<input class=input type="text" name="pwd" placeholder="Nom d'utilisateur" required>
+				<input class=input type="text" name="nom" placeholder="Nom d'utilisateur" required>
 				<p>Adresse mail</p>
 				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz" required>
 				<p>Mot de passe</p>
-				<input class=input type="password" name="pwd" placeholder="Mot de passe" required>
-				<p>Retapez votre mot de passe</p>
 				<input class=input type="password" name="pwd" placeholder="Mot de passe" required>
 				<input class="submit button" type="submit" value=Valider>
 			</form>
