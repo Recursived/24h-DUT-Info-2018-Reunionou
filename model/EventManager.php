@@ -33,7 +33,35 @@ class EventManager extends Manager {
 
 	public function joinEvent($data) {
 		$db = $this->dbConnect();
+		if (!Manager::checkUserLoggedIn($_SESSION)) {
+			$sql = 'INSERT INTO personne (nom) VALUES :nom';
+			$req = $db->prepare($sql);
+			$req->execute(array(
+				':nom' => $data['nom']
+			));
+			$sql = 'SELECT id FROM personne ORDER BY DESC LIMIT 1';
+			$req = $db->query($sql);
+			$idUser = $req->fetch();
+		} else {
+			$idUser = $_SESSION['id'];
+		}
 		$sql = 'INSERT INTO participe VALUES (:idUser, :idEvent, :reponse, :comment)';
-		$reqp = $db->prepare($sql);
+		$req = $db->prepare($sql);
+		$req->execute(array(
+			':idUser'  => $idUser,
+			':idEvent' => $data['idEvent'],
+			':reponse' => $data['reponse'],
+			':comment' => $data ['comment']
+		));
+	}
+
+	public function getEvents($idUser) {
+		$db = $this->dbConnect();
+		$sql = 'SELECT * FROM evenement WHERE id_utilisateur = :idUser';
+		$req = $db->prepare($sql);
+		$req->execute(array(
+			':idUser' => $idUser
+		));
+		return $req;
 	}
 }

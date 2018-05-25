@@ -5,6 +5,8 @@ $title = 'Index';
 ob_start();
 ?>
 
+<link rel="stylesheet" href="public/css/style2.css">
+
 <div id=Container>
 
 	<div id=Form-col>
@@ -18,6 +20,19 @@ ob_start();
 				<input class="submit button" type="submit" value=Valider>
 			</form>
 		</div>
+		
+		<div class="wrapper">
+						<form class="form" method="post" action="http://localhost/IHM/index.php">
+						  <input type="text" class="name field-in font" name="mailnom" placeholder="Je suis..."/>
+						  
+						  <input type="email" class="email field-in font" name="mail"  placeholder="Lien de l'invitation"/>
+						  
+						  
+						  
+						  <button class="submit2 font" name="mailsub" value="1" >Envoyer</button>
+						</form>  	
+						<div class="shadow"></div>
+					  </div>
 
 
 	</div>

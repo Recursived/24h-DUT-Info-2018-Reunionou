@@ -5,6 +5,8 @@ $title = 'Index';
 ob_start();
 ?>
 
+
+
 <div id=Container>
 	<div id=Index-head>
 		<div id=Logo>
