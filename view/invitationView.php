@@ -11,23 +11,14 @@ ob_start();
 		
 		<div id=Log-form class="opened">
 			<form action=post>
-				<p>Adresse mail</p>
+				<p>Je suis...</p>
 				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz">
-				<p>Lien</p>
+				<p>Lien de l'invitation</p>
 				<input class=input type="password" name="pwd" placeholder="motdepasse">
-				<input class=submit type="submit" value=Valider>
+				<input class="submit button" type="submit" value=Valider>
 			</form>
 		</div>
 
-		<div id="Reg-button" class=button onclick="opening('Reg-form', 'Reg-button')">
-			Inscription
-		</div>
-		<div id=Reg-form>
-			<form action=post>
-				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz">
-				<input class=input type="password" name="pwd" placeholder="Mot de passe">
-			</form>
-		</div>
 
 	</div>
 
