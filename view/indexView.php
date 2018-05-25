@@ -4,8 +4,14 @@ $title = 'Index';
 // Permet de creer la variable content
 ob_start();
 ?>
-<div class="container-fluid">
-	<h1 class="text-center">Index</h1>
+
+<div id=Container>
+	<div id=Index-head>
+		<div id=Logo>
+			<img src="">
+		</div>
+		<h1>Reunionou</h1>
+	</div>
 </div>
 
 <?php
