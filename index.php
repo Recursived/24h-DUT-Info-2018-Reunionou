@@ -6,8 +6,10 @@ try {
 	if (isset($_GET['action'])) {
 		if ($_GET['action'] == 'index') {
 			index();
+		} elseif ($_GET['action'] == 'register') {
+			register();
 		} else {
-			// Redirection index ou erreur 404
+			index();
 		}
 	} else {
 		index();
