@@ -39,11 +39,19 @@ class EventManager extends Manager {
 			$req->execute(array(
 				':nom' => $data['nom']
 			));
+			$sql = 'SELECT id FROM personne ORDER BY DESC LIMIT 1';
+			$req = $db->query($sql);
+			$idUser = $req->fetch();
+		} else {
+			$idUser = $_SESSION['id']
 		}
 		$sql = 'INSERT INTO participe VALUES (:idUser, :idEvent, :reponse, :comment)';
 		$req = $db->prepare($sql);
 		$req->execute(array(
-			':idUser' => $_SESSION['']
+			':idUser'  => $idUser,
+			':idEvent' => $data['idEvent'],
+			':reponse' => $data['reponse'],
+			':comment' => $data ['comment']
 		));
 	}
 
