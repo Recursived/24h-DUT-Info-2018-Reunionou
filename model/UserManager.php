@@ -21,14 +21,34 @@ class UserManager extends Manager {
 					:login, :pwd)';
 			$req = $db->prepare($sql);
 			$req->execute(array(
-				':login' => $data['login'],
-				':pwd' => sha1($data['pwd'])
+				':login' => htmlspecialchars($data['login']),
+				':pwd'   => sha1($data['pwd'])
 			));
 			// header('Location: index.php');
 		}
 	}
 
-	public function loginUser($data) {
-		# code...
+	/**
+	 * Connect an user
+	 * @param  String $pseudo pseudo typed
+	 * @param  String $pwd    pwd type
+	 * @return boolean        true if good combination else false
+	 */
+	public function connectUser($login, $pwd) {
+		$db = $this->dbConnect();
+		$sql = 'SELECT U.id, P.nom FROM utilisateur U, personne P WHERE U.login = :login AND U.pwd = :pwd AND U.id_personne = P.id';
+		$req = $db->prepare($sql);
+		$req->execute(array(
+			':login' => htmlspecialchars($login),
+			':pwd'    => htmlspecialchars(sha1($pwd))
+		));
+		$data = $req->fetch();
+		if ($data) {
+			$_SESSION['id'] = $data['0'];
+			$_SESSION['nom'] = $data['1'];
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
