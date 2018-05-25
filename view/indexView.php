@@ -23,6 +23,7 @@ ob_start();
 				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz">
 				<p>Mot de passe</p>
 				<input class=input type="password" name="pwd" placeholder="motdepasse">
+				<input class=submit type="submit" value=Valider>
 			</form>
 		</div>
 
