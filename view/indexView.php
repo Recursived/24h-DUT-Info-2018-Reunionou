@@ -23,7 +23,7 @@ ob_start();
 				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz">
 				<p>Mot de passe</p>
 				<input class=input type="password" name="pwd" placeholder="motdepasse">
-				<input class=submit type="submit" value=Valider>
+				<input class="submit button" type="submit" value=Valider>
 			</form>
 		</div>
 
@@ -32,11 +32,19 @@ ob_start();
 		</div>
 		<div id=Reg-form>
 			<form action=post>
+				<p>Nom d'utilisateur (celui qui sera visible)</p>
+				<input class=input type="text" name="pwd" placeholder="motdepasse">
+				<p>Adresse mail</p>
 				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz">
-				<input class=input type="password" name="pwd" placeholder="Mot de passe">
+				<p>Mot de passe</p>
+				<input class=input type="password" name="pwd" placeholder="motdepasse">
+				<p>Retapez votre mot de passe</p>
+				<input class=input type="password" name="pwd" placeholder="motdepasse">
+				<input class="submit button" type="submit" value=Valider>
 			</form>
 		</div>
 
+		<div id=Invite>J'ai reçu une invitation</div>
 	</div>
 
 </div>

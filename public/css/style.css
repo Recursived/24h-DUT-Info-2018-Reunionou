@@ -9,13 +9,15 @@ clair    #F75D7A
 kazoo    #AEF3E7
 
 */
+body{
+	background-color: #8EE3EF;
+}
 *{
 	font-family: 'Tajawal', sans-serif;
 	color:white;
 }
 
 #Container{
-	background-color: #8EE3EF;
 	min-height:100vh;
 }
 
@@ -49,6 +51,7 @@ kazoo    #AEF3E7
 	border-radius: 8px;
 	font-weight:700;
 	cursor: pointer;
+	border:none;
 }
 
 #Log-button, #Reg-button{
@@ -57,6 +60,10 @@ kazoo    #AEF3E7
 	margin-left:20%;
 	margin-bottom: 30px;
 	box-shadow: 0 6px #37718E;
+}
+
+#Reg-button{
+	margin-bottom: 40px;
 }
 
 #Log-form, #Reg-form{
@@ -74,6 +81,28 @@ kazoo    #AEF3E7
 	display:block;
 }
 
-#Log-form *{
+#Log-form *, #Reg-form *{
 	width:100%;
+}
+
+.submit{
+	background-color: #254E70;
+	margin-bottom: 30px;
+	box-shadow: 0 6px #37718E;
+	margin-bottom:-10px;
+	margin-top:10px;
+	width:60% !important;
+	margin-left:20%;
+}
+
+#Invite{
+	color: #254E70;
+	cursor:pointer;
+	text-align: center;
+	position: relative;
+	bottom: 20px;
+	font-size:20px;
+}
+#Invite:hover{
+	text-decoration: underline;
 }
