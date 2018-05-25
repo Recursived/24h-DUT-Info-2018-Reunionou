@@ -3,7 +3,7 @@
 require_once 'model/Manager.php';
 
 function index() {
-	if (Manger::checkUserLoggedIn($_SESSION)) {
+	if (Manager::checkUserLoggedIn($_SESSION)) {
 		// TODO: information about user (like event)
 		require_once 'view/indexView.php';
 	} else {
