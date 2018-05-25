@@ -45,3 +45,12 @@ function setEvent($data) {
 function invit() {
 	require_once 'view/invitationView.php';
 }
+
+function addUser($data) {
+	if (empty($data['login']) || empty($data['pwd']) || empty($data['nom'])) {
+		require_once 'view/indexView.php';
+	} else {
+		$manager = new UserManager();
+		$manager->setUser($data);
+	}
+}
