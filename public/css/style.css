@@ -1,11 +1,78 @@
-@import url('https://fonts.googleapis.com/css?family=Tajawal');
+@import url('https://fonts.googleapis.com/css?family=Tajawal:400,700,900');
+
+/*
+fond     #8EE3EF
+vignette #37718E
+sombre   #254E70
+rouge    #C33C54
+clair    #F75D7A
+kazoo    #AEF3E7
+
+*/
+*{
+	font-family: 'Tajawal', sans-serif;
+	color:white;
+}
 
 #Container{
-
+	background-color: #8EE3EF;
+	min-height:100vh;
 }
 
 #Index-head{
 	text-align: center;
-	font-size: 2em;
-	font-family: 'Tajawal', sans-serif;
+	margin-bottom: 100px;
+}
+
+#Index-head h1{
+	font-size: 6em;
+	font-weight: 700;
+}
+
+#Form-col{
+	width:60%;
+	margin-left:20%;
+}
+
+.input{
+	color: black;
+	padding: 5px 10px;
+	border:none;
+	border-radius:5px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+	margin-bottom:20px;
+}
+
+.button{
+	text-align: center;
+	font-size:2em;
+	border-radius: 8px;
+	font-weight:700;
+	cursor: pointer;
+}
+
+#Log-button, #Reg-button{
+	background-color: #254E70;
+	width:60%;
+	margin-left:20%;
+	margin-bottom: 30px;
+}
+
+#Log-form, #Reg-form{
+	margin-top:30px;
+	display:none;
+	background-color: #C33C54;
+	padding:20px;
+	border:none;
+	border-radius: 8px;
+	margin-bottom: 30px;
+	box-shadow: 2px
+}
+
+#Log-form.opened, #Reg-form.opened{
+	display:block;
+}
+
+#Log-form *{
+	width:100%;
 }

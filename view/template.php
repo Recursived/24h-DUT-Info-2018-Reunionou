@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="public/css/style.css">
+	<script type="text/javascript" src="public/js/java.js"></script>
 </head>
 <body>
 <!-- Debut du header -->
