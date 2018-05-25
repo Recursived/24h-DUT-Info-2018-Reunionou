@@ -43,7 +43,7 @@ class EventManager extends Manager {
 			$req = $db->query($sql);
 			$idUser = $req->fetch();
 		} else {
-			$idUser = $_SESSION['id']
+			$idUser = $_SESSION['id'];
 		}
 		$sql = 'INSERT INTO participe VALUES (:idUser, :idEvent, :reponse, :comment)';
 		$req = $db->prepare($sql);
