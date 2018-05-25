@@ -22,23 +22,32 @@ a{
 	color:white;
 }
 
-#Container{
-	min-height:100vh;
-}
-
 #Index-head{
+	position:absolute;
 	text-align: center;
-	margin-bottom: 100px;
+	top:30px;
+	margin-bottom: 500px;
+	margin-left:calc(50% - 300px);
+	width:calc(100% - (50% - 300px));
+	overflow: hidden;
 }
 
 #Index-head h1{
 	font-size: 6em;
+	margin-top:10px;
 	font-weight: 700;
+}
+#Index-head *{
+	float:left;
+}
+#Logo img{
+	height:150px;
 }
 
 #Form-col{
 	width:60%;
 	margin-left:20%;
+	margin-top:300px;
 }
 
 .input{
