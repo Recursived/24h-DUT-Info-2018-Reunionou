@@ -10,7 +10,7 @@ function index() {
 		$dataEvents = $manager->getEvents($_SESSION['id']);
 		require_once 'view/indexView.php';
 	} else {
-		require_once 'view/indexView.php';
+		require_once 'view/eventsView.php';
 	}
 }
 
@@ -44,4 +44,13 @@ function setEvent($data) {
 
 function invit() {
 	require_once 'view/invitationView.php';
+}
+
+function addUser($data) {
+	if (empty($data['login']) || empty($data['pwd']) || empty($data['nom'])) {
+		require_once 'view/indexView.php';
+	} else {
+		$manager = new UserManager();
+		$manager->setUser($data);
+	}
 }
