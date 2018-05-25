@@ -65,3 +65,9 @@ class EventManager extends Manager {
 		return $req;
 	}
 }
+
+/*$manager = new EventManager();
+
+$_POST['']
+
+$manager->joinEvent($_POST);*/

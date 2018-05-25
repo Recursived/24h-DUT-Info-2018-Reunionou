@@ -19,8 +19,8 @@ ob_start();
 		<div id="Log-button" class=button onclick="opening('Log-form', 'Log-button')">
 			Connection
 		</div>
-		<div id=Log-form>
-			<form method=post action=index.php?action=auth>
+		<div id="Log-form">
+			<form method="post" action="index.php?action=auth">
 				<p>Adresse mail</p>
 				<input class=input type="mail" name="login" placeholder="ardresse@mail.xyz" required>
 				<p>Mot de passe</p>
