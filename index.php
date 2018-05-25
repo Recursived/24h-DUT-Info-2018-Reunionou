@@ -11,6 +11,8 @@ try {
 			register();
 		} elseif ($_GET['action'] == 'addUser') {
 			addUser();
+		} elseif ($_GET['action'] == 'auth') {
+			auth($_POST);
 		} else {
 			index();
 		}

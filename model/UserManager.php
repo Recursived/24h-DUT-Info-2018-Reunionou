@@ -5,34 +5,50 @@ require_once 'Manager.php';
 class UserManager extends Manager {
 
 	public function setUser($data) {
+		print_r($data);
 		$db = $this->dbConnect();
 		if (empty($data['login']) || empty($data['pwd']) || empty($data['nom'])) {
 			require_once 'view/registerView.php';
 		} else {
-			$sql = 'INSERT INTO personne (nom) VALUES :nom';
+			$sql = 'INSERT INTO personne (nom) VALUES (:nom)';
 			$req = $db->prepare($sql);
 			$req->execute(array(
 				':nom' => $data['nom']
 			));
-			$sql = 'INSERT INTO utilisateur (id_personne, login, pwd)
+			$sql = 'INSERT INTO utilisateur (id_personne, id, login, pwd)
 					VALUES ((SELECT id FROM personne ORDER BY id DESC LIMIT 1),
+							(SELECT id FROM personne ORDER BY id DESC LIMIT 1),
 					:login, :pwd)';
 			$req = $db->prepare($sql);
 			$req->execute(array(
-				':login' => $data['login'],
-				':pwd' => sha1($data['pwd'])
+				':login' => htmlspecialchars($data['login']),
+				':pwd'   => sha1($data['pwd'])
 			));
-			header('Location: index.php');
+			// header('Location: index.php');
 		}
 	}
 
-	public function loginUser($data) {
-		# code...
+	/**
+	 * Connect an user
+	 * @param  String $pseudo pseudo typed
+	 * @param  String $pwd    pwd type
+	 * @return boolean        true if good combination else false
+	 */
+	public function connectUser($login, $pwd) {
+		$db = $this->dbConnect();
+		$sql = 'SELECT U.id, P.nom FROM utilisateur U, personne P WHERE U.login = :login AND U.pwd = :pwd AND U.id_personne = P.id';
+		$req = $db->prepare($sql);
+		$req->execute(array(
+			':login' => htmlspecialchars($login),
+			':pwd'    => htmlspecialchars(sha1($pwd))
+		));
+		$data = $req->fetch();
+		if ($data) {
+			$_SESSION['id'] = $data['0'];
+			$_SESSION['nom'] = $data['1'];
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
-
-$manager = new UserManager();
-$_POST['login'] = "didier";
-$_POST['nom'] = "charles";
-$_POST['pwd'] = "banane";
-$manager->setUser($_POST);
