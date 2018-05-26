@@ -65,4 +65,24 @@ class EventManager extends Manager {
 		));
 		return $req;
 	}
+
+	public function getEvent($link)	{
+		$db = $this->dbConnect();
+		$sql = 'SELECT E.titre, E.description, E.date, E.lieu, PE.nom, PA.reponse, PA.commentaire 
+				FROM evenement E, participe PA, personne PE 
+				WHERE E.lien = :link AND PA.id_evenement = E.id AND PE.id = PA.id';
+		$req = $db->prepare($sql);
+		$req->execute(array(
+			':link' => htmlspecialchars($link)
+		));
+	}
+
+	public function delEvent($idEvent) {
+		$db = $this->dbConnect();
+		$sql = 'SELECT date FROM evenement WHERE id = :idEvent';
+		$req = $db->prepare($sql);
+		$req->execute(array(
+			':idEvent' => htmlspecialchars($idEvent)
+		));
+	}
 }

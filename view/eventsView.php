@@ -12,7 +12,9 @@ ob_start();
 		</div>
 	</div>
 </div>
-
+<?php while($data = $dataEvents->fetch()): ?>
+	<?php print_r($data) ?>
+<?php endwhile ?>
 <?php
 $content = ob_get_clean();
 require_once 'template.php';
