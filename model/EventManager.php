@@ -66,12 +66,3 @@ class EventManager extends Manager {
 		return $req;
 	}
 }
-
-$manager = new EventManager();
-
-$_POST['nom'] = "didier";
-$_POST['idEvent'] = 4;
-$_POST['reponse'] = "oui";
-$_POST['comment'] = "trop bien oui";
-
-$manager->joinEvent($_POST);
