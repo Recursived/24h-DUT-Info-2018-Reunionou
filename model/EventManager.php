@@ -76,13 +76,4 @@ class EventManager extends Manager {
 			':link' => htmlspecialchars($link)
 		));
 	}
-
-	public function delEvent($idEvent) {
-		$db = $this->dbConnect();
-		$sql = 'SELECT date FROM evenement WHERE id = :idEvent';
-		$req = $db->prepare($sql);
-		$req->execute(array(
-			':idEvent' => htmlspecialchars($idEvent)
-		));
-	}
 }
