@@ -1,5 +1,6 @@
 <?php
 $title = 'Index';
+$dataI = $dataInfo->fetch();
 
 // Permet de creer la variable content
 ob_start();
@@ -19,29 +20,21 @@ ob_start();
 <div id=View>
 	<div id=View-content>
 		<div id=Desc>
-			<p class=bold>Titre</p>
-			<p>Desc</p>
-			<p>Date</p>
-			<p>Lieu</p>
+			<p class=bold><?= $dataI['0'] ?></p>
+			<p><?= $dataI['1'] ?></p>
+			<p><?= $dataI['2'] ?></p>
+			<p><?= $dataI['3'] ?></p>
 		</div>
 		<div id=Participants>
 			<h1>Participants</h1>
 			<table>
+				<?php while($data = $dataEvent->fetch()): ?>
 				<tr>
-					<td>Participant 1 |</td>
-					<td>Oui |</td>
-					<td>Comm</td>
+					<td><?= $data['4'] ?></td>
+					<td><?= $data['5'] ?></td>
+					<td><?= $data['6'] ?></td>
 				</tr>
-				<tr>
-					<td>Participant 2 |</td>
-					<td>Oui |</td>
-					<td>Comm</td>
-				</tr>
-				<tr>
-					<td>Participant 3 |</td>
-					<td>Oui |</td>
-					<td>Comm</td>
-				</tr>
+			<?php endwhile; ?>
 			</table>
 		</div>
 	</div>

@@ -1,7 +1,5 @@
 <?php
 
-require_once 'Manager.php';
-
 class EventManager extends Manager {
 
 	public function setEvent($data)	{
@@ -75,6 +73,7 @@ class EventManager extends Manager {
 		$req->execute(array(
 			':link' => htmlspecialchars($link)
 		));
+		return $req;
 	}
 
 	public function alreadyChecked($idEvent, $idUser) {

@@ -55,7 +55,14 @@ function addUser($data) {
 	}
 }
 
-function event($data) {
+function event($data, $link) {
+	$manager = new EventManager();
+	if (empty($link['link'])) {
+		header('Location: index.php');
+	}
+	$dataEvent = $manager->getEvent($link['link']);
+	$dataInfo = $manager->getEvent($link['link']);
+	$dataInfo->fetch();
 	require_once 'view/eventView.php';
 }
 

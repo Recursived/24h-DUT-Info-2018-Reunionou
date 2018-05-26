@@ -18,7 +18,7 @@ try {
 		} elseif ($_GET['action'] == 'invit') {
 			invit();
 		} elseif ($_GET['action'] == 'event') {
-			event($_POST);
+			event($_POST, $_GET);
 		} elseif ($_GET['action'] == 'participate') {
 			joinEvent($_POST);
 		} elseif ($_GET['action'] == 'logout') {

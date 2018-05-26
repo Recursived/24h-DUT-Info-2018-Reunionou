@@ -7,7 +7,12 @@ class Manager {
 	 * @return PDO Object
 	 */
 	protected function dbConnect() {
-		require_once 'dblog.php';
+		// require_once 'dblog.php';
+		$host = "localhost";
+		$user = "root";
+		$pwd = "";
+		$db = "epreuveweb";
+		$connect = 'mysql:host=' . $host . ';dbname=' . $db;
 		$db = new PDO($connect, $user, $pwd);
 		$db->exec('SET NAMES UTF8');
 		return $db;
