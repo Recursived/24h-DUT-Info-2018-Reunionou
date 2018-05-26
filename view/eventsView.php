@@ -15,14 +15,15 @@ ob_start();
 	</div>
 	<div id=Events>
 		<a href=""><div id=Add-event>Ajouter un evenement</div></a>
-		<div class="event"><a>Evenement 1</a></div>
-		<div class="event"><a>Evenement 2</a></div>
-		<div class="event"><a>Evenement 3</a></div>
+		<?php while ($data = $dataEvents->fetch()): ?>
+			<a href="index.php?action=event&link=<?= htmlspecialchars($data['5']) ?>">
+				<div class="event">
+					<?= htmlspecialchars($data['1']) ?>
+				</div>
+			</a>
+		<?php endwhile ?>
 	</div>
 </div>
-<?php while($data = $dataEvents->fetch()): ?>
-	<?php print_r($data) ?>
-<?php endwhile ?>
 <?php
 $content = ob_get_clean();
 require_once 'template.php';

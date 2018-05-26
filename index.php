@@ -17,6 +17,8 @@ try {
 			setEvent($_POST);
 		} elseif ($_GET['action'] == 'invit') {
 			invit();
+		} elseif ($_GET['action'] == 'event') {
+			event($_POST);
 		} else {
 			index();
 		}

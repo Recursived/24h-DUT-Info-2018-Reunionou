@@ -54,3 +54,7 @@ function addUser($data) {
 		$manager->setUser($data);
 	}
 }
+
+function event($data) {
+	require_once 'view/eventView.php';
+}
