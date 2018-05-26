@@ -30,8 +30,7 @@ ob_start();
 			<table>
 				<?php while($data = $dataEvent->fetch()): ?>
 				<tr>
-					<td><?= $data['4'] ?></td>
-					<td><?= $data['5'] ?></td>
+					<td><?= $data['4'] ?> |</td>
 					<td><?= $data['6'] ?></td>
 				</tr>
 			<?php endwhile; ?>
@@ -53,7 +52,7 @@ ob_start();
 	<div>
 		<form method=post action=index.php?action=participate>
 			<p>Votre commentaire</p>
-			<input name="idEvent" value="<?= $dataI['0'] ?>" hidden>
+			<input name="idEvent" value="<?php $manager=new EventManager(); echo $manager->getIdEventBySlug($_GET['link']) ?>" hidden>
 			<input class=input type="text" name="com">
 			<input type="submit" value="Valider">
 		</form>

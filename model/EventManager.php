@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Manager.php';
+
 class EventManager extends Manager {
 
 	public function setEvent($data)	{
@@ -86,5 +88,13 @@ class EventManager extends Manager {
 		} else {
 			return false;
 		}
+	}
+
+	public function getIdEventBySlug($slug)	{
+		$db = $this->dbConnect();
+		$sql = 'SELECT id FROM evenement WHERE lien = "'.$slug.'"';
+		$req = $db->query($sql);
+		$data = $req->fetch();
+		return $data['0'];
 	}
 }
