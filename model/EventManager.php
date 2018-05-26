@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once 'Manager.php';
 
 class EventManager extends Manager {
