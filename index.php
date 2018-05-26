@@ -19,8 +19,10 @@ try {
 			invit();
 		} elseif ($_GET['action'] == 'event') {
 			event($_POST);
+		} elseif ($_GET['action'] == 'logout') {
+			logout();
 		} else {
-			index();
+			index(); 
 		}
 	} else {
 		index();

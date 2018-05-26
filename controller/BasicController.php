@@ -58,3 +58,10 @@ function addUser($data) {
 function event($data) {
 	require_once 'view/eventView.php';
 }
+
+function logout() {
+	session_destroy();
+	header("location: index.php");
+	exit();
+?>
+}

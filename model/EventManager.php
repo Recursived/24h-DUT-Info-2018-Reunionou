@@ -76,4 +76,16 @@ class EventManager extends Manager {
 			':link' => htmlspecialchars($link)
 		));
 	}
+
+	public function alreadyChecked($idEvent, $idUser) {
+		$db = $this->dbConnect();
+		$sql = 'SELECT * FROM participe';
+		$req = $db->query($sql);
+		$data = $req->fetch();
+		if ($data) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
