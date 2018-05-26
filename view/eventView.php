@@ -13,7 +13,9 @@ ob_start();
 			<img src="public/img/logo.png">
 		</div>
 		<h1>Reunionou</h1>
+		<div id=Unlog><a href=index.php?action=logout>Déconnexion</a></div>
 	</div>
+	
 
 	
 
