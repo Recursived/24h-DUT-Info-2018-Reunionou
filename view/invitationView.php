@@ -15,7 +15,11 @@ ob_start();
 		<div class="wrapper">
 						
 						<form class="form" action=post>
-						<h1> Invitation </h1>
+						<h1>
+						<div class="animate one">
+						<span>I</span><span>n</span><span>v</span><span>i</span><span>t</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span>
+						</div>
+						</h1>
 						<input type="text" class="name field-in font" name="nameInvit" placeholder="Je suis..."/>
 						  
 						  <input type="text" class="email field-in font" name="linkInvit"  placeholder="Lien de l'invitation"/>
@@ -29,6 +33,8 @@ ob_start();
 
 
 	</div>
+	
+	
 
 </div>
 
