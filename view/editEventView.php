@@ -18,7 +18,7 @@ ob_start();
 
 <div id=View>
 	<div id=View-content>
-		<form method=post action=index.php?action=>
+		<form method=post action=index.php?action=addEvent>
 			<p>Titre</p>
 			<input class=input type="text" name="titre" required>
 			<p>Description</p>

@@ -62,7 +62,6 @@ function event($data, $link) {
 	}
 	$dataEvent = $manager->getEvent($link['link']);
 	$dataInfo = $manager->getEvent($link['link']);
-	$dataInfo->fetch();
 	require_once 'view/eventView.php';
 }
 
@@ -76,4 +75,11 @@ function joinEvent($data) {
 	$manager = new EventManager();
 	$manager->joinEvent($data);
 	header('Location: index.php');
+}
+
+function create() {
+	if (!Manager::checkUserLoggedIn($_SESSION)) {
+		header('Location: index.php');
+	}
+	require_once 'view/editEventView.php';
 }

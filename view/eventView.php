@@ -53,6 +53,7 @@ ob_start();
 	<div>
 		<form method=post action=index.php?action=participate>
 			<p>Votre commentaire</p>
+			<input name="idEvent" value="<?= $dataI['0'] ?>" hidden>
 			<input class=input type="text" name="com">
 			<input type="submit" value="Valider">
 		</form>

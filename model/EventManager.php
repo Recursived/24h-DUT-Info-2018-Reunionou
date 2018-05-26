@@ -49,8 +49,8 @@ class EventManager extends Manager {
 		$req->execute(array(
 			':idUser'  => $idUser,
 			':idEvent' => $data['idEvent'],
-			':reponse' => $data['reponse'],
-			':comment' => $data['comment']
+			':reponse' => "OUI",
+			':comment' => $data['com']
 		));
 	}
 

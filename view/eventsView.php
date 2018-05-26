@@ -13,7 +13,7 @@ ob_start();
 		<div id=Unlog><a href=index.php?action=logout>Déconnexion</a></div>
 	</div>
 	<div id=Events>
-		<a href=""><div id=Add-event>Ajouter un evenement</div></a>
+		<a href="index.php?action=create"><div id=Add-event>Ajouter un evenement</div></a>
 		<?php while ($data = $dataEvents->fetch()): ?>
 			<a href="index.php?action=event&link=<?= htmlspecialchars($data['5']) ?>">
 				<div class="event">

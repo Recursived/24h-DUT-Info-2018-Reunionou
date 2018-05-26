@@ -21,6 +21,8 @@ try {
 			event($_POST, $_GET);
 		} elseif ($_GET['action'] == 'participate') {
 			joinEvent($_POST);
+		} elseif ($_GET['action'] == 'create') {
+			create();
 		} elseif ($_GET['action'] == 'logout') {
 			logout();
 		} else {
