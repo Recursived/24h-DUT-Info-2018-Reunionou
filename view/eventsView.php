@@ -5,7 +5,6 @@ $title = 'Index';
 ob_start();
 ?>
 
-<div id=Container>
 	<div id=Header>
 		<div id=Header-logo>
 			<img src="public/img/logo.png">
@@ -23,7 +22,6 @@ ob_start();
 			</a>
 		<?php endwhile ?>
 	</div>
-</div>
 <?php
 $content = ob_get_clean();
 require_once 'template.php';

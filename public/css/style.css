@@ -12,6 +12,7 @@ kazoo    #AEF3E7
 
 body{
 	background-color: #8EE3EF;
+	margin:0;
 }
 
 a{
@@ -168,7 +169,6 @@ a{
 	height:85px;
 	padding:10px;
 	background-color: #254E70;
-	margin: -8px;
 	z-index: 99;
 }
 #Header *{
@@ -235,4 +235,61 @@ a{
 	#Unlog{
 		display:none;
 	}
+}
+
+#Map{
+	position:fixed;
+	left:0;
+	width:calc(100vw - 700px);
+	height: calc(100vh - 105px);
+	background-color: grey;
+	margin:0;
+}
+
+#View{
+	position: fixed;
+	right:0;
+	width:700px;
+	background-color: white;
+	height: calc(100vh - 105px);
+	overflow-y:auto;
+}
+
+#View-content{
+	width:80%;
+	margin-left:10%;
+}
+
+#View-content *{
+	color:black;
+}
+
+.bold{
+	font-weight:700;
+}
+
+#Participants{
+	background-color: grey;
+	padding:10px;
+	border-radius:8px;
+	box-shadow: 0 6px lightgrey;
+}
+
+#Participants *{
+	color:white;
+}
+
+#Participants h1{
+	margin-top:10px;
+}
+
+#Response{
+	position:fixed;
+	width:500px;
+	background-color: #254E70;
+	border-radius: 8px;
+	bottom:0;
+	left:100px;
+	color:black;
+	padding:20px;
 }
