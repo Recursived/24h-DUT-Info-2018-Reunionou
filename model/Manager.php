@@ -8,10 +8,10 @@ class Manager {
 	 */
 	protected function dbConnect() {
 		// require_once 'dblog.php';
-		$host = "localhost";
-		$user = "root";
-		$pwd = "";
-		$db = "epreuveweb";
+		$host = "91.219.107.219";
+		$user = "arman956025";
+		$pwd = "ajwphgiygh";
+		$db = "arman956025";
 		$connect = 'mysql:host=' . $host . ';dbname=' . $db;
 		$db = new PDO($connect, $user, $pwd);
 		$db->exec('SET NAMES UTF8');
