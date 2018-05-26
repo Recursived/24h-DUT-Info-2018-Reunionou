@@ -35,6 +35,7 @@ ob_start();
 				</tr>
 			<?php endwhile; ?>
 			</table>
+			<p>Lien de partage : armandcolin.fr/24h/index.php?action=event&link=<?php $_GET['link'] ?></p>
 		</div>
 	</div>
 
