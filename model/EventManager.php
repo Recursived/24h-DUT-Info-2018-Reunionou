@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'Manager.php';
 
 class EventManager extends Manager {
@@ -34,14 +34,15 @@ class EventManager extends Manager {
 	public function joinEvent($data) {
 		$db = $this->dbConnect();
 		if (!Manager::checkUserLoggedIn($_SESSION)) {
-			$sql = 'INSERT INTO personne (nom) VALUES :nom';
+			$sql = 'INSERT INTO personne (nom) VALUES (:nom)';
 			$req = $db->prepare($sql);
 			$req->execute(array(
 				':nom' => $data['nom']
 			));
-			$sql = 'SELECT id FROM personne ORDER BY DESC LIMIT 1';
+			$sql = 'SELECT id FROM personne ORDER BY id DESC LIMIT 1';
 			$req = $db->query($sql);
-			$idUser = $req->fetch();
+			$dataT = $req->fetch();
+			$idUser = $dataT['0'];
 		} else {
 			$idUser = $_SESSION['id'];
 		}
@@ -51,7 +52,7 @@ class EventManager extends Manager {
 			':idUser'  => $idUser,
 			':idEvent' => $data['idEvent'],
 			':reponse' => $data['reponse'],
-			':comment' => $data ['comment']
+			':comment' => $data['comment']
 		));
 	}
 
@@ -66,8 +67,11 @@ class EventManager extends Manager {
 	}
 }
 
-/*$manager = new EventManager();
+$manager = new EventManager();
 
-$_POST['']
+$_POST['nom'] = "didier";
+$_POST['idEvent'] = 4;
+$_POST['reponse'] = "oui";
+$_POST['comment'] = "trop bien oui";
 
-$manager->joinEvent($_POST);*/
+$manager->joinEvent($_POST);
