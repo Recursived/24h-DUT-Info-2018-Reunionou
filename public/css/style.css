@@ -190,7 +190,6 @@ a{
 }
 #Events{
 	background-color: white;
-	margin: 8px -8px -8px -10px;
 	padding-top:30px;
 	min-height: calc(100vh - 135px);
 }
@@ -200,7 +199,7 @@ a{
 	border-radius: 8px;
 	background-color: #254E70;
 	margin-bottom: 30px;
-	width:80%;
+	width:calc(80% - 16px);
 	margin-left:10%;
 	box-shadow: 0 6px #37718E;
 
@@ -321,12 +320,14 @@ a{
 #Form > div p{
 	color:black;
 }
-#Form > div input{
+#Form > div input[type="submit"]{
 	color:white;
-	background-color: 
-	padding:;
+	background-color: #C33C54;
+	padding:8px;
 	width:100%;
-	box-shadow: 0 6px 
+	box-shadow: 0 6px #F75D7A;
+	border:none;
+	border-radius: 8px;
 }
 
 @media screen and (max-width: 1050px){
@@ -340,7 +341,7 @@ a{
 	#View{
 		position:relative;
 		width:100%;
-		margin-top:-122px;
+		margin-top:-121px;
 		overflow-y: visible;
 		height:auto;
 		padding-bottom: 100px;
@@ -357,4 +358,8 @@ a{
 
 #Form.opened{
 	display:block;
+}
+
+#Desc{
+	text-align: left;
 }

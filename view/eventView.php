@@ -18,10 +18,12 @@ ob_start();
 
 <div id=View>
 	<div id=View-content>
-		<p class=bold>Titre</p>
-		<p>Desc</p>
-		<p>Date</p>
-		<p>Lieu</p>
+		<div id=Desc>
+			<p class=bold>Titre</p>
+			<p>Desc</p>
+			<p>Date</p>
+			<p>Lieu</p>
+		</div>
 		<div id=Participants>
 			<h1>Participants</h1>
 			<table>
