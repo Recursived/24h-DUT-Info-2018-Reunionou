@@ -62,5 +62,11 @@ function event($data) {
 function logout() {
 	session_destroy();
 	header("location: index.php");
-	exit();
+	exit(); 
+}
+
+function joinEvent($data) {
+	$manager = new EventManager();
+	$manager->joinEvent($data);
+	header('Location: index.php');
 }
