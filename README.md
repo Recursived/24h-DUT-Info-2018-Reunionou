@@ -23,4 +23,4 @@ Ensuite vous pouvez utiliser le fichier dans le dossier database pour générer 
 * **Maël Szeles** - [Compte Github](https://github.com/Eruxe)
 * **Alexandre Maneta** - [Compte Github](https://github.com/Recursived)
 * **Alexis Noiseau** [Compte Github](https://github.com/Noiseau)
-* **William Ammouial** [Compte Github](https://github.com/Remy93130)
+* **William Ammouial** [Compte Github](https://github.com/Wammouial)
