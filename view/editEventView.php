@@ -22,11 +22,11 @@ ob_start();
 			<p>Titre</p>
 			<input class=input type="text" name="titre" required>
 			<p>Description</p>
-			<input class=input type="text" name="desc">
+			<input class=input type="text" name="description">
 			<p>Date</p>
-			<input class=input type="datetime" name="date" required>
+			<input class=input type="datetime" name="date" placeholder="AAAA-MM-DD HH:MM:SS" required>
 			<p>Lieu</p>
-			<input class=input id="addressInput" type="text" name="lieu" required>
+			<input class=input id="addressInput" type="text" name="lieu" placeholder="Voir carte" required>
 			<input type="hidden" id="coordsInput" name="coords">
 			<input type="submit" value="Valider">
 		</form>

@@ -38,7 +38,6 @@ function setEvent($data) {
 	} else {
 		$manager = new EventManager();
 		$manager->setEvent($data);
-		header('Location: index.php');
 	}
 }
 

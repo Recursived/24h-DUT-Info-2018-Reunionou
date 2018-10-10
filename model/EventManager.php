@@ -6,7 +6,7 @@ class EventManager extends Manager {
 
 	public function setEvent($data)	{
 		if (!Manager::checkUserLoggedIn($_SESSION)) {
-			// header('Location: index.php');
+			header('Location: index.php');
 		} else {
 			$db = $this->dbConnect();
 			if ($data['description'] == "") {
@@ -92,8 +92,11 @@ class EventManager extends Manager {
 
 	public function getIdEventBySlug($slug)	{
 		$db = $this->dbConnect();
-		$sql = 'SELECT id FROM evenement WHERE lien = "'.$slug.'"';
-		$req = $db->query($sql);
+		$sql = 'SELECT id FROM evenement WHERE lien = :slug';
+		$req = $db->prepare($sql);
+		$req->execute(array(
+			':slug' => $slug
+		));
 		$data = $req->fetch();
 		return $data['0'];
 	}

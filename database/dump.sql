@@ -8,6 +8,8 @@
 -- Version de PHP :  7.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,15 +28,18 @@ SET time_zone = "+00:00";
 -- Structure de la table `evenement`
 --
 
-CREATE TABLE `evenement` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `evenement`;
+CREATE TABLE IF NOT EXISTS `evenement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(50) NOT NULL,
   `description` text,
   `date` datetime NOT NULL,
-  `lieu` varchar(50) NOT NULL,
+  `lieu` varchar(255) NOT NULL,
   `lien` varchar(40) NOT NULL,
   `id_personne_utilisateur` int(11) NOT NULL,
-  `id_utilisateur` int(11) NOT NULL
+  `id_utilisateur` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `evenement_utilisateur_FK` (`id_personne_utilisateur`,`id_utilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -43,11 +48,14 @@ CREATE TABLE `evenement` (
 -- Structure de la table `participe`
 --
 
-CREATE TABLE `participe` (
+DROP TABLE IF EXISTS `participe`;
+CREATE TABLE IF NOT EXISTS `participe` (
   `id` int(11) NOT NULL,
   `id_evenement` int(11) NOT NULL,
   `reponse` varchar(40) NOT NULL,
-  `commentaire` text NOT NULL
+  `commentaire` text NOT NULL,
+  PRIMARY KEY (`id`,`id_evenement`),
+  KEY `participe_evenement0_FK` (`id_evenement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -56,9 +64,11 @@ CREATE TABLE `participe` (
 -- Structure de la table `personne`
 --
 
-CREATE TABLE `personne` (
-  `id` int(11) NOT NULL,
-  `nom` varchar(40) NOT NULL
+DROP TABLE IF EXISTS `personne`;
+CREATE TABLE IF NOT EXISTS `personne` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(40) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -67,59 +77,17 @@ CREATE TABLE `personne` (
 -- Structure de la table `utilisateur`
 --
 
-CREATE TABLE `utilisateur` (
+DROP TABLE IF EXISTS `utilisateur`;
+CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id_personne` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `login` varchar(40) NOT NULL,
-  `pwd` varchar(40) NOT NULL
+  `pwd` varchar(40) NOT NULL,
+  PRIMARY KEY (`id_personne`,`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Index pour les tables exportées
---
-
---
--- Index pour la table `evenement`
---
-ALTER TABLE `evenement`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `evenement_utilisateur_FK` (`id_personne_utilisateur`,`id_utilisateur`);
-
---
--- Index pour la table `participe`
---
-ALTER TABLE `participe`
-  ADD PRIMARY KEY (`id`,`id_evenement`),
-  ADD KEY `participe_evenement0_FK` (`id_evenement`);
-
---
--- Index pour la table `personne`
---
-ALTER TABLE `personne`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `utilisateur`
---
-ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`id_personne`,`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `evenement`
---
-ALTER TABLE `evenement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `personne`
---
-ALTER TABLE `personne`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- Contraintes pour les tables exportées
+-- Contraintes pour les tables déchargées
 --
 
 --
@@ -140,6 +108,7 @@ ALTER TABLE `participe`
 --
 ALTER TABLE `utilisateur`
   ADD CONSTRAINT `utilisateur_personne_FK` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -2,6 +2,7 @@
 $title = 'Index';
 $dataI = $dataInfo->fetch();
 
+
 // Permet de creer la variable content
 ob_start();
 ?>
@@ -35,7 +36,7 @@ ob_start();
 				</tr>
 			<?php endwhile; ?>
 			</table>
-			<p>Lien de partage : armandcolin.fr/24h/index.php?action=event&link=<?php $_GET['link'] ?></p>
+			<p>Lien de partage : armandcolin.fr/24h/index.php?action=event&link=<?= $link['link'] ?></p>
 		</div>
 	</div>
 

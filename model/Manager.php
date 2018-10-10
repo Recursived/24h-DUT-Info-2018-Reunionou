@@ -7,7 +7,7 @@ class Manager {
 	 * @return PDO Object
 	 */
 	protected function dbConnect() {
-		require_once 'dblog.php';
+		require 'dblog.php';
 		$db = new PDO($connect, $user, $pwd);
 		$db->exec('SET NAMES UTF8');
 		return $db;
